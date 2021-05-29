@@ -113,4 +113,12 @@ public class MowItNow {
     public List<Tondeuse> getTondeuses() {
         return tondeuses;
     }
+
+    public List<String> moveTondeuses() {
+        List<String> res = new ArrayList<>();
+        for (Tondeuse tondeuse : this.tondeuses) {
+            res.add(tondeuse.move(this.pelouse));
+        }
+        return res;
+    }
 }

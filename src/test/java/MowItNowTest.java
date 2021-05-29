@@ -57,7 +57,7 @@ public class MowItNowTest {
 
     //INITIATE TONDEUSE TEST
     @Test
-    void testFailToInitiateTondeuses() throws IOException {
+    void testFailToInitiateTondeuses() {
         String path = "src/test/resources/invalid-tondeuse-1.txt";
         assertThrows(IllegalArgumentException.class, ()-> new MowItNow(path));
 
@@ -94,5 +94,16 @@ public class MowItNowTest {
         assertEquals(3, tondeuse2.getPositionY());
         assertEquals("E", tondeuse2.getDirection());
         assertEquals("AADAADADDA", tondeuse2.getInstructions());
+    }
+
+    //MOVE TONDEUSE TEST
+    @Test
+    void testMoveTondeuses() throws IOException {
+        String path = "src/test/resources/valid.txt";
+        MowItNow mowItNow = new MowItNow(path);
+        List<String> res = mowItNow.moveTondeuses();
+        assertEquals(2, res.size());
+        assertEquals("1 3 N", res.get(0));
+        assertEquals("5 1 E", res.get(1));
     }
 }
