@@ -75,4 +75,42 @@ public class TondeuseTest {
         String res = tondeuse.move(pelouse);
         assertEquals("0 0 W", res);
     }
+
+    //TURN LEFT TONDEUSE TEST
+    @Test
+    void testTurnLeftTondeuse() {
+        Pelouse pelouse = new Pelouse(4L, 4L);
+        Tondeuse tondeuse = new Tondeuse(0L, 3L, "N");
+        tondeuse.setInstructions("G");
+        String res = tondeuse.move(pelouse);
+        assertEquals("0 3 W", res);
+        tondeuse.setInstructions("G");
+        res = tondeuse.move(pelouse);
+        assertEquals("0 3 S", res);
+        tondeuse.setInstructions("G");
+        res = tondeuse.move(pelouse);
+        assertEquals("0 3 E", res);
+        tondeuse.setInstructions("G");
+        res = tondeuse.move(pelouse);
+        assertEquals("0 3 N", res);
+    }
+
+    //TURN LEFT TONDEUSE TEST
+    @Test
+    void testTurnRightTondeuse() {
+        Pelouse pelouse = new Pelouse(4L, 4L);
+        Tondeuse tondeuse = new Tondeuse(0L, 3L, "N");
+        tondeuse.setInstructions("D");
+        String res = tondeuse.move(pelouse);
+        assertEquals("0 3 E", res);
+        tondeuse.setInstructions("D");
+        res = tondeuse.move(pelouse);
+        assertEquals("0 3 S", res);
+        tondeuse.setInstructions("D");
+        res = tondeuse.move(pelouse);
+        assertEquals("0 3 W", res);
+        tondeuse.setInstructions("D");
+        res = tondeuse.move(pelouse);
+        assertEquals("0 3 N", res);
+    }
 }

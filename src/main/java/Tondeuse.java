@@ -43,10 +43,10 @@ public class Tondeuse {
             case 'A':
                 moveForwardTondeuse(pelouse);
                 break;
-            case 'G':
+            case 'D':
                 turnRightTondeuse();
                 break;
-            case 'D':
+            case 'G':
                 turnLeftTondeuse();
                 break;
             default:
@@ -55,9 +55,41 @@ public class Tondeuse {
     }
 
     private void turnLeftTondeuse() {
+        switch (this.direction) {
+            case "N":
+                this.direction = "W";
+                break;
+            case "S":
+                this.direction = "E";
+                break;
+            case "E":
+                this.direction = "N";
+                break;
+            case "W":
+                this.direction = "S";
+                break;
+            default:
+                break;
+        }
     }
 
     private void turnRightTondeuse() {
+        switch (this.direction) {
+            case "N":
+                this.direction = "E";
+                break;
+            case "S":
+                this.direction = "W";
+                break;
+            case "E":
+                this.direction = "S";
+                break;
+            case "W":
+                this.direction = "N";
+                break;
+            default:
+                break;
+        }
     }
 
     private void moveForwardTondeuse(Pelouse pelouse) {
