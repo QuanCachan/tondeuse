@@ -117,7 +117,9 @@ public class MowItNow {
     public List<String> moveTondeuses() {
         List<String> res = new ArrayList<>();
         for (Tondeuse tondeuse : this.tondeuses) {
-            res.add(tondeuse.move(this.pelouse));
+            String line = tondeuse.move(this.pelouse);
+            System.out.println(line);
+            res.add(line);
         }
         return res;
     }
